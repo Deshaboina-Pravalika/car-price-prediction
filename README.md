@@ -1,5 +1,6 @@
 # car-price-prediction
 A simple and user-friendly web app built with Flask and Machine Learning to estimate the resale value of a car based on user input.
+
 <img width="1919" height="869" alt="Screenshot 2025-08-03 161950" src="https://github.com/user-attachments/assets/941fbcff-361f-41d7-824b-1a4f160f210a" />
 
 ## Features
