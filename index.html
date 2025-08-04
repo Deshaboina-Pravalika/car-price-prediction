@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car Price Prediction</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #121212;
+      color: #f1f1f1;
+    }
+
+    .hero-image {
+background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1950&q=80');
+
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .overlay {
+      width: 100%;
+      padding: 20px;
+      max-width: 800px;
+      background-color: rgba(0, 0, 0, 0.6);
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+    }
+
+    .hero-title {
+      font-size: 3rem;
+      text-align: center;
+      color: #f9f871;
+      margin-bottom: 20px;
+    }
+
+    .container {
+      background: none;
+      box-shadow: none;
+      margin: 0 auto;
+      padding: 0;
+    }
+
+    h2 {
+      color: #ffdf00;
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+      font-size: 1.1rem;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      font-size: 1rem;
+      border-radius: 8px;
+      border: none;
+      margin-top: 5px;
+    }
+
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 15px;
+      font-size: 1rem;
+      background-color: #ff9100;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #ff3d00;
+    }
+
+    .prediction {
+      text-align: center;
+      font-size: 1.2rem;
+      margin-top: 20px;
+      color: #90ee90;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="hero-image">
+    <div class="overlay">
+      <h1 class="hero-title">Car Price Prediction</h1>
+
+      <div class="container">
+        <form action="{{ url_for('predict')}}" method="post">
+          <h2>Enter Car Details</h2>
+
+          <label for="first">Year</label>
+          <input id="first" name="Year" type="number" required>
+
+          <label for="second">Showroom Price (in Lacs)</label>
+          <input id="second" name="Present_Price" type="number" step="0.01" required>
+
+          <label for="third">Kilometers Driven</label>
+          <input id="third" name="Kms_Driven" type="number" required>
+
+          <label for="fourth">Number of Previous Owners</label>
+          <input id="fourth" name="Owner" type="number" required>
+
+          <label for="fuel">Fuel Type</label>
+          <select name="Fuel_Type_Petrol" id="fuel" required>
+            <option value="Petrol">Petrol</option>
+            <option value="Diesel">Diesel</option>
+            <option value="CNG">CNG</option>
+          </select>
+
+          <label for="resea">Seller Type</label>
+          <select name="Seller_Type_Individual" id="resea" required>
+            <option value="Dealer">Dealer</option>
+            <option value="Individual">Individual</option>
+          </select>
+
+          <label for="research">Transmission Type</label>
+          <select name="Transmission_Mannual" id="research" required>
+            <option value="Mannual">Manual</option>
+            <option value="Automatic">Automatic</option>
+          </select>
+
+          <button type="submit">Calculate Selling Price</button>
+
+          <div class="prediction">
+            {{ prediction_text }}
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
