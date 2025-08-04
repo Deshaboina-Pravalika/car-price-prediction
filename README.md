@@ -4,15 +4,25 @@ A simple and user-friendly web app built with Flask and Machine Learning to esti
 
 ## Features
 ⦁	Interactive UI using HTML/CSS
+
 ⦁	Uses a trained Random Forest Regression model
+
 ⦁	Predicts resale value based on:
+
 ⦁	Year of manufacture
+
 ⦁	Present price
+
 ⦁	Kilometers driven
+
 ⦁	Fuel type
+
 ⦁	Number of owners
+
 ⦁	Transmission type
+
 ⦁	Seller type
+
 ## How It Works
 ⦁	The app uses a Random Forest Regression model trained on a dataset of car sales.
 
