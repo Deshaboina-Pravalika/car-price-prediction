@@ -15,6 +15,9 @@ A simple and user-friendly web app built with Flask and Machine Learning to esti
 ⦁	Seller type
 ## How It Works
 ⦁	The app uses a Random Forest Regression model trained on a dataset of car sales.
+
 ⦁	The model is saved using pickle and loaded in the Flask backend.
+
 ⦁	A form collects the car's details from the user.
+
 ⦁	The model predicts the resale price and displays it on the same page.
